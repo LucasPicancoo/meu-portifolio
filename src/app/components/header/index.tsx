@@ -1,12 +1,36 @@
 "use client"
 
 
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import { NavItem } from "./nav-item"
+
+const NAV_ITEMS = [
+    {
+        label: 'Home',
+        href: '/'
+    },
+    {
+        label: 'Sobre',
+        href: '/about'
+    },
+    {
+        label: 'Stacks',
+        href: '/stacks'
+    },
+    {
+        label: 'Projetos',
+        href: '/projects'
+    },
+    {
+        label: 'Contato',
+        href: '/contact'
+    }
+    
+]
 
 
-export default function Navbar(){
+export default function Header(){
 
     const [scrolled, setScrolled] = useState(false)
 
@@ -23,7 +47,7 @@ export default function Navbar(){
 
     return(
 
-        <nav className="fixed top-6 w-full flex justify-center z-50 font-sans">
+        <header className="fixed top-6 w-full flex justify-center z-50 font-sans">
 
             <motion.div
                 animate={{
@@ -50,15 +74,13 @@ export default function Navbar(){
 
                 <h1 className="flex-1 text-lg flex justify-start">Lucas Picanço</h1>
 
-                <div className="flex-1 flex justify-center items-center gap-6 text-md">
+                <nav className="flex-1 flex justify-center items-center gap-4 md:gap-6 text-md">
 
-                    <Link href="#home">Home</Link>
-                    <Link href="#sobre">Sobre</Link>
-                    <Link href="#stacks">Stacks</Link>
-                    <Link href="#projetos">Projetos</Link>
-                    <Link href="#contato">Contato</Link>
+                    {NAV_ITEMS.map(item => (
+                        <NavItem {...item} key={item.label} />
+                    ))}
 
-                </div>
+                </nav>
 
                 <div className="flex-1 flex justify-end items-center gap-4 font-medium">
 
@@ -68,7 +90,7 @@ export default function Navbar(){
                 </div>
 
             </motion.div>
-        </nav>
+        </header>
     )
 
 }
