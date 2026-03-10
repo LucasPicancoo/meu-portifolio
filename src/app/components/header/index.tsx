@@ -1,9 +1,10 @@
 "use client"
 
-
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { NavItem } from "./nav-item"
+import { FaBars } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
 
 const NAV_ITEMS = [
     {
@@ -33,6 +34,7 @@ const NAV_ITEMS = [
 export default function Header(){
 
     const [scrolled, setScrolled] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false)
 
     useEffect(() =>{
         const handleScroll = () => {
@@ -74,7 +76,8 @@ export default function Header(){
 
                 <h1 className="flex-1 text-lg flex justify-start">Lucas Picanço</h1>
 
-                <nav className="flex-1 flex justify-center items-center gap-4 md:gap-6 text-md">
+                <nav className={`md:flex flex-1 justify-center items-center gap-4 md:gap-6 md:static md:w-auto md:bg-transparent md:flex-row md:p-0 
+                    ${openMenu ? 'flex absolute top-17.5 left-0 w-full flex-col bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md p-6 rounded-2xl border border-gray-200 shadow-lg' : 'hidden'}`}>
 
                     {NAV_ITEMS.map(item => (
                         <NavItem {...item} key={item.label} />
@@ -82,12 +85,16 @@ export default function Header(){
 
                 </nav>
 
-                <div className="flex-1 flex justify-end items-center gap-4 font-medium">
+                <div className="flex-1 justify-end items-center gap-4 font-medium hidden md:flex">
 
                     <p className="cursor-pointer">PT/EN</p>
                     <p className="cursor-pointer">T</p>
 
                 </div>
+                
+                <button className="md:hidden cursor-pointer" onClick={() => setOpenMenu(!openMenu)}>
+                    {openMenu ? <FaXmark /> : <FaBars/>}
+                </button>
 
             </motion.div>
         </header>
