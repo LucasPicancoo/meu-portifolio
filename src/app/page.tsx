@@ -1,10 +1,11 @@
 import Header from "./components/header";
+import { HeroSection } from "./components/pages/home/hero-section";
 
 export default function Home() {
   return (
     <div>
-        <Header/>
-        <div className="h-[200vh]"></div>
+        <HeroSection />
+        <div className="h-[200vh] bg-amber-50"></div>
     </div>
   );
 }
