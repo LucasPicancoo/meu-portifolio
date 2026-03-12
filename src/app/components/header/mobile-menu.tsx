@@ -30,8 +30,8 @@ export default function MobileMenu({ items }: MobileMenuProps){
             {isOpen &&(
 
             <div className="absolute -top-6 left-0 w-full h-screen bg-background backdrop-blur-md flex flex-col items-center justify-center gap-8 z-40 md:hidden">
-                {items.map((item) => (
-                        <NavItem {...item} key={item.label} />
+                {items.map((item, index) => (
+                        <NavItem {...item} key={item.label} index={index} />
                 ))}    
             </div>
             )}

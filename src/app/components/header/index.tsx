@@ -78,8 +78,8 @@ export default function Header(){
 
                 <nav className="hidden md:flex flex-1 justify-center items-center gap-6">
 
-                    {NAV_ITEMS.map(item => (
-                        <NavItem {...item} key={item.label} />
+                    {NAV_ITEMS.map((item, index) => (
+                        <NavItem {...item} key={item.label} index={index} />
                     ))}
 
                 </nav>
