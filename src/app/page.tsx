@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
         <HeroSection />
-        <div className="h-[200vh] bg-amber-50"></div>
+        <div className="h-[200vh]"></div>
     </div>
   );
 }

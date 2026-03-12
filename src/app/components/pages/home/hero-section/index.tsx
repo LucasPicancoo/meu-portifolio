@@ -12,7 +12,7 @@ export const HeroSection = () => {
             <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{once: true}}
                 className="w-full h-full flex flex-col items-center justify-center gap-2 sm:gap-4 text-center">
 
