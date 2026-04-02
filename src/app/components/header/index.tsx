@@ -65,7 +65,7 @@ export default function Header(){
                     
                     borderColor: scrolled
                         ? "rgba(107,114,128,0.2)"
-                        : "transparent",
+                        : "rgba(107,114,128,0)",
 
                     paddingLeft: scrolled ? 24 : 32,
                     paddingRight: scrolled ? 24 : 32
