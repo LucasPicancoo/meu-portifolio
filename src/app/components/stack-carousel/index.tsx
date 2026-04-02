@@ -1,14 +1,13 @@
 import { IconType } from "react-icons";
 import { FaReact, FaNodeJs, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaFigma, FaTrello } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiPostgresql, SiMongodb, SiFirebase, SiRedis, SiNextdotjs, SiVite, SiJavascript, SiExpress, SiNpm, SiAxios, SiGooglecloud, SiPostman, SiSelenium, SiVercel } from "react-icons/si";
-import { motion } from "framer-motion";
 
 type StackItem = {
     label: string;
     icon: IconType;
 }
 
-const STACK_ITEMS: StackItem[] = [
+export const STACK_ITEMS: StackItem[] = [
 
     {
         label: 'Node.js',
